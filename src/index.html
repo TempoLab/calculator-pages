@@ -4,31 +4,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
 </head>
-<body class="flex">
+<body>
+    <main class="flex">
     <div class="w-72 h-80 mx-auto p-2 rounded-lg mt-20 bg-slate-500">
         <div class="rounded-t-lg bg-gray-200">
-            <p class="pr-2 text-right text-xs text-blue-600">1+2</p>
-            <p class="pr-2 text-right">2</p>
+            <p id="formulaText" class="pr-2 text-right text-xs text-blue-600">1</p>
+            <p id="inputText" class="pr-2 text-right">1</p>
         </div>
         <div class="h-64 pt-3 grid grid-cols-4 gap-2">
-            <button class="bg-red-400 px-4 col-span-2 hover:opacity-50">AC</button>
-            <button class="bg-slate-100 hover:opacity-50">÷</button>
-            <button class="bg-slate-100 hover:opacity-50">x</button>
-            <button class="bg-slate-300 hover:opacity-50">1</button>
-            <button class="bg-slate-300 hover:opacity-50">2</button>
-            <button class="bg-slate-300 hover:opacity-50">3</button>
-            <button class="bg-slate-100 hover:opacity-50">-</button>
-            <button class="bg-slate-300 hover:opacity-50">4</button>
-            <button class="bg-slate-300 hover:opacity-50">5</button>
-            <button class="bg-slate-300 hover:opacity-50">6</button>
-            <button class="bg-slate-100 hover:opacity-50">+</button>
-            <button class="bg-slate-300 hover:opacity-50">7</button>
-            <button class="bg-slate-300 hover:opacity-50">8</button>
-            <button class="bg-slate-300 hover:opacity-50">9</button>
-            <button class="bg-blue-400 py-4 row-span-2 rounded-br-lg hover:opacity-50">=</button>
-            <button class="bg-slate-300 px-4 col-span-2 rounded-bl-lg hover:opacity-50">0</button>
-            <button class="bg-slate-300 hover:opacity-50">.</button>
+            <button id="ac" class="bg-red-400 px-4 col-span-2 hover:opacity-50">AC</button>
+            <button id="divide" class="bg-slate-100 hover:opacity-50">÷</button>
+            <button id="multiply" class="bg-slate-100 hover:opacity-50">x</button>
+            <button id="one" class="bg-slate-300 hover:opacity-50">1</button>
+            <button id="two" class="bg-slate-300 hover:opacity-50">2</button>
+            <button id="three" class="bg-slate-300 hover:opacity-50">3</button>
+            <button id="minus" class="bg-slate-100 hover:opacity-50">-</button>
+            <button id="four" class="bg-slate-300 hover:opacity-50">4</button>
+            <button id="five" class="bg-slate-300 hover:opacity-50">5</button>
+            <button id="six" class="bg-slate-300 hover:opacity-50">6</button>
+            <button id="plus" class="bg-slate-100 hover:opacity-50">+</button>
+            <button id="seven" class="bg-slate-300 hover:opacity-50">7</button>
+            <button id="eight" class="bg-slate-300 hover:opacity-50">8</button>
+            <button id="nine" class="bg-slate-300 hover:opacity-50">9</button>
+            <button id="equals" class="bg-blue-400 py-4 row-span-2 rounded-br-lg hover:opacity-50">=</button>
+            <button id="zero" class="bg-slate-300 px-4 col-span-2 rounded-bl-lg hover:opacity-50">0</button>
+            <button id="decimal" class="bg-slate-300 hover:opacity-50">.</button>
         </div>
     </div>
 </div>
+</main>
+<script src="../calculator.js"></script>
 </body>
