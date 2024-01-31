@@ -1,4 +1,3 @@
-// text box disapears without text
 // fix special interactions
 
 let formula = ''
@@ -11,13 +10,20 @@ const updateText = () => {
 
 const addToFormula = (i) => formula = `${formula}${i}`
 
+const checkForSpecial = () => {
+    if (input !== Number) {
+        console.log('hit')
+    }
+}
+
 const ac = () => {
-    input = 0
     formula = ''
+    input = 0
     updateText()
 }
 
 const divide = () => {
+    checkForSpecial()
     input = '/'
     addToFormula('/')
     updateText()
