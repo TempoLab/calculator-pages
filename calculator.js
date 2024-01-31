@@ -1,7 +1,5 @@
-// fix special interactions
-
 let formula = ''
-let input = '0'
+let input = 0
 
 const updateText = () => {
     document.querySelector('#formulaText').innerHTML = formula
@@ -10,9 +8,23 @@ const updateText = () => {
 
 const addToFormula = (i) => formula = `${formula}${i}`
 
+const errorText = () => {
+    formula = 'error'
+    updateText()
+    setTimeout(() => {
+        ac()
+    }, 1000)
+}
+
 const checkForSpecial = () => {
-    if (input !== Number) {
-        console.log('hit')
+    if (isNaN(input)) {
+        formula = formula.substring(0, formula.length - 1)
+    }
+}
+
+const addToResult = () => {
+    if (formula.includes('=')) {
+        formula = `${input}`
     }
 }
 
@@ -23,6 +35,7 @@ const ac = () => {
 }
 
 const divide = () => {
+    addToResult()
     checkForSpecial()
     input = '/'
     addToFormula('/')
@@ -30,90 +43,115 @@ const divide = () => {
 }
 
 const multiply = () => {
+    addToResult()
+    checkForSpecial()
     input = '*'
     addToFormula('*')
     updateText()
 }
 
 const minus = () => {
+    addToResult()
+    checkForSpecial()
     input = '-'
     addToFormula('-')
     updateText()
 }
 
 const plus = () => {
+    addToResult()
+    checkForSpecial()
     input = '+'
     addToFormula('+')
     updateText()
 }
 
 const decimal = () => {
+    addToResult()
+    checkForSpecial()
     input = `${input}.`
     addToFormula('.')
     updateText()
 }
 
 const one = () => {
+    addToResult()
     input = 1
     addToFormula(1)
     updateText()
 }
 
 const two = () => {
+    addToResult()
     input = 2
     addToFormula(2)
     updateText()
 }
 
 const three = () => {
+    addToResult()
     input = 3
     addToFormula(3)
     updateText()
 }
 
 const four = () => {
+    addToResult()
     input = 4
     addToFormula(4)
     updateText()
 }
 
 const five = () => {
+    addToResult()
     input = 5
     addToFormula(5)
     updateText()
 }
 
 const six = () => {
+    addToResult()
     input = 6
     addToFormula(6)
     updateText()
 }
 
 const seven = () => {
+    addToResult()
     input = 7
     addToFormula(7)
     updateText()
 }
 
 const eight = () => {
+    addToResult()
     input = 8
     addToFormula(8)
     updateText()
 }
 
 const nine = () => {
+    addToResult()
     input = 9
     addToFormula(9)
     updateText()
 }
 
 const zero = () => {
+    addToResult()
     input = 0
     addToFormula(0)
     updateText()
 }
 
 const equals = () => {
+    if (isNaN(formula.substring(0, 1))) {
+        errorText()
+        return
+    }
+    if (formula.includes('=')) {
+        return
+    }
     input = eval(formula)
     addToFormula(`= ${input}`)
     updateText()
